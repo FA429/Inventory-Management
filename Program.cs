@@ -45,22 +45,28 @@ internal class Program
                         Console.WriteLine(findItem.GetQuantity());
 
         }
+ var SORTiTEMS=store.SortByNameAsc();
+foreach (var item in SORTiTEMS)
+{
+    Console.WriteLine(item.GetName());
+}
+
+        // foreach (var item in items)
+        // {
+        //     Console.ForegroundColor = ConsoleColor.DarkYellow;
+
+        //     Console.WriteLine("    ╔═════════════════════════════════════════════════════════════════════════════════════════════════╗");
+        //     Console.WriteLine($"   ║     NAME : {item.GetName()} QUANTITY : {item.GetQuantity()} CREATED_AT :{item.GetCreatedAt()}   ║");
+        //     Console.WriteLine("    ║                                                                                                 ║");
+        //    Console.WriteLine("     ╚═════════════════════════════════════════════════════════════════════════════════════════════════╝");
+
+        // }
+        // Console.WriteLine($" COUNT:{items.Count}");
+
+        // Console.WriteLine($"total: {store.GetCurrentVolume()}");
+        // Console.ForegroundColor = ConsoleColor.Green;
 
 
-        foreach (var item in items)
-        {
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-/*
-            Console.WriteLine("    ╔═════════════════════════════════════════════════════════════════════════════════════════════════╗");
-            Console.WriteLine($"   ║     NAME : {item.GetName()} QUANTITY : {item.GetQuantity()} CREATED_AT :{item.GetCreatedAt()}   ║");
-            Console.WriteLine("    ║                                                                                                 ║");
-           Console.WriteLine("    ╚═════════════════════════════════════════════════════════════════════════════════════════════════╝");
-*/
-        }
-        Console.WriteLine($" COUNT:{items.Count}");
-
-        Console.WriteLine($"total: {store.GetCurrentVolume()}");
-        Console.ForegroundColor = ConsoleColor.Green;
 
     }
 

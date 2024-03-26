@@ -36,6 +36,12 @@ namespace sda_onsite_2_inventory_management.src
         {
             return _items;
         }
+        public List<Item> SortByNameAsc()
+        {
+            var Item = _items.OrderBy(item => item.GetName()).ToList();
+            return Item;
+            
+        }
 
         public Item? FindByName(Item targetItem)
         {
