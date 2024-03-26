@@ -31,17 +31,36 @@ internal class Program
 
         List<Item> items = store.GetItems();
         store.AddItem(pen);
-        Console.WriteLine(soap.GetName());
-        Console.WriteLine(items.Count);
-        foreach (var item in items)
+        store.AddItem(sodaCan);
+        store.AddItem(chocolateBar);
+        store.AddItem(sunscreen);
+
+        store.RemoveItem(toothbrush);
+        store.RemoveItem(pen);
+
+       Item? findItem = store.FindByName(sodaCan);
+        if (findItem is not null)
         {
-        Console.WriteLine($" NAME {item.GetName()} CREATED_AT {item.GetCreatedAt()} OUANTITY {item.GetQuantity()} ");
-            
+            Console.WriteLine(findItem.GetName());
+                        Console.WriteLine(findItem.GetQuantity());
+
         }
 
 
+        foreach (var item in items)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+/*
+            Console.WriteLine("    ╔═════════════════════════════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine($"   ║     NAME : {item.GetName()} QUANTITY : {item.GetQuantity()} CREATED_AT :{item.GetCreatedAt()}   ║");
+            Console.WriteLine("    ║                                                                                                 ║");
+           Console.WriteLine("    ╚═════════════════════════════════════════════════════════════════════════════════════════════════╝");
+*/
+        }
+        Console.WriteLine($" COUNT:{items.Count}");
 
-
+        Console.WriteLine($"total: {store.GetCurrentVolume()}");
+        Console.ForegroundColor = ConsoleColor.Green;
 
     }
 
