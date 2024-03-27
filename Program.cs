@@ -8,7 +8,7 @@ internal class Program
 
     private static void Main(string[] args)
     {
-        Store store = new("Tamimi");
+        Store store = new("Tamimi", 200);
 
 
 
@@ -37,19 +37,19 @@ internal class Program
 
         store.RemoveItem(toothbrush);
         store.RemoveItem(pen);
-
-       Item? findItem = store.FindByName(sodaCan);
+        Console.WriteLine($"MAxCapacity :{store.GetMaxCapacity()}");
+        Item? findItem = store.FindByName(sodaCan);
         if (findItem is not null)
         {
             Console.WriteLine(findItem.GetName());
-                        Console.WriteLine(findItem.GetQuantity());
+            Console.WriteLine(findItem.GetQuantity());
 
         }
- var SORTiTEMS=store.SortByNameAsc();
-foreach (var item in SORTiTEMS)
-{
-    Console.WriteLine(item.GetName());
-}
+        var SORTiTEMS = store.SortByNameAsc();
+        foreach (var item in SORTiTEMS)
+        {
+            Console.WriteLine(item.GetName());
+        }
 
         // foreach (var item in items)
         // {

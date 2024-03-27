@@ -8,18 +8,21 @@ namespace sda_onsite_2_inventory_management.src
         private int _quantity;
         private DateTime _createdAt;
 
-        public Item(string name, int quantity, DateTime? createdAt = null)
+        
+           public Item(string name, int quantity, DateTime? createdAt = null)
         {
-            this._name = name;
-            this._quantity = quantity;
+            _name = name;
+            _quantity = (quantity > 0) ? quantity : throw new ArgumentException("Quantity should be bigger than 0");
             this._createdAt = (DateTime)(createdAt is null ? DateTime.Now : createdAt);
-
         }
+
+        
 
         public string GetName()
         {
             return _name;
         }
+
         public int GetQuantity()
         {
             return _quantity;
